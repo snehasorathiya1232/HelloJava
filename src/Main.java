@@ -5,8 +5,9 @@ public class Main {
         System.out.println("enter name: ");
         String name = sc.nextLine();
 
+        String id = "abc123";
         System.out.println("enter SPID: ");
-        String id = sc.nextLine();
+        String idd = sc.nextLine();
 
         System.out.println("enter password: ");
         String pass = sc.nextLine();
@@ -14,10 +15,10 @@ public class Main {
         System.out.println("enter age: ");
         int age = sc.nextInt();
 
-        if(pass.equals("Sneha@2006")) {
-            System.out.println("");
-            System.out.println("LOGIN SUCESSFULLL");
-            System.out.println("");
+        if(pass.equals("Sneha@2006") && idd.equals(id)) {
+            System.out.println("***");
+            System.out.println("LOGIN SUCESSFUL");
+            System.out.println("***");
             System.out.println("enter sub 1: ");
             double s1 = sc.nextInt();
 
