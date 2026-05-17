@@ -17,16 +17,16 @@ public class Main {
 
         if(pass.equals("Sneha@2006") && idd.equals(id)) {
             System.out.println("***");
-            System.out.println("LOGIN SUCESSFUL");
+            System.out.println("LOGIN SUCCESSFUL");
             System.out.println("***");
             System.out.println("enter sub 1: ");
-            double s1 = sc.nextInt();
+            double s1 = sc.nextDouble();
 
             System.out.println("enter sub 2: ");
-            double s2 = sc.nextInt();
+            double s2 = sc.nextDouble();
 
             System.out.println("enter sub 3: ");
-            double s3 = sc.nextInt();
+            double s3 = sc.nextDouble();
 
             double sum = s1 + s2 + s3;
             double per = (sum / 150) * 100;
@@ -41,14 +41,22 @@ public class Main {
             System.out.println("*total 50 mark per paper*");
             System.out.println("total: " + sum);
             System.out.println("percentage: " + per);
-            if (per > 40) {
-                System.out.println("status: pass");
-            } else {
-                System.out.println("status: fail");
+            if (per >= 80) {
+                System.out.println("Grade: A");
             }
-        }else{
-            System.out.println("LOGIN FAIL!! WRONG PASSWORD");
-        }
+            else if (per >= 60) {
+                System.out.println("Grade: B");
+            }
+            else if (per >= 40) {
+                System.out.println("Grade: C");
+            }
+            else {
+                System.out.println("Grade: F");
+            }
 
+        }else{
+            System.out.println("LOGIN FAIL!! SOMETHING WRONG");
+        }
+        sc.close();
     }
 }
