@@ -1,12 +1,24 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        String name="sneha";
-        int age = 19;
-        double rupee=12321.22;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter name: ");
+        String name = sc.nextLine();
 
-        System.out.println("hello everyone i learn git");
-        System.out.println(name);
-        System.out.println(age);
-        System.out.println(rupee);
+        System.out.println("enter age: ");
+        int age = sc.nextInt();
+
+        System.out.println("enter sub 1: ");
+        int s1 = sc.nextInt();
+
+        System.out.println("enter sub 2: ");
+        int s2 = sc.nextInt();
+
+        int c = s1 + s2;
+        System.out.println("Name: "+name);
+        System.out.println("age: "+age);
+        System.out.println("sub 1: "+s1);
+        System.out.println("sub 2: " +s2);
+        System.out.println("total: "+c);
     }
 }
