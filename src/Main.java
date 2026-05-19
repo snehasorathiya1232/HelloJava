@@ -18,13 +18,11 @@ public class Main {
     }
 
     public static double sumMark(double a,double b,double c){
-        double sum = a + b + c;
-        return sum;
+        return a + b + c;
     }
 
     public static double per(double sum){
-        double per = (sum / 150) * 100;
-        return per;
+        return (sum / 150) * 100;
     }
 
     public static void grade(double per){
@@ -71,9 +69,9 @@ public class Main {
         int age = sc.nextInt();
 
         if(pass.equals("Sneha@2006") && idd.equals(id)) {
-            System.out.println("***");
+            System.out.println("/n");
             System.out.println("LOGIN SUCCESSFUL");
-            System.out.println("***");
+            System.out.println("/n");
 
             double s1 = enterMark1(sc);
             double s2 = enterMark2(sc);
