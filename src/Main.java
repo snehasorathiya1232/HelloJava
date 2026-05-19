@@ -1,5 +1,60 @@
 import java.util.Scanner;
 public class Main {
+
+    public static double enterMark1(Scanner sc){
+        System.out.println("enter sub 1: ");
+        return sc.nextDouble();
+    }
+
+    public static double enterMark2(Scanner sc){
+        System.out.println("enter sub 2: ");
+        return sc.nextDouble();
+    }
+
+    public static double enterMark3(Scanner sc){
+        System.out.println("enter sub 3: ");
+        return sc.nextDouble();
+
+    }
+
+    public static double sumMark(double a,double b,double c){
+        double sum = a + b + c;
+        return sum;
+    }
+
+    public static double per(double sum){
+        double per = (sum / 150) * 100;
+        return per;
+    }
+
+    public static void grade(double per){
+        if (per >= 80) {
+            System.out.println("Grade: A");
+        }
+        else if (per >= 60) {
+            System.out.println("Grade: B");
+        }
+        else if (per >= 40) {
+            System.out.println("Grade: C");
+        }
+        else {
+            System.out.println("Grade: F");
+        }
+    }
+
+    public static void printt(String name,int age,double s1,double s2,double s3,double sum,double per){
+        System.out.println("-------------------------------");
+        System.out.println("Name: " + name);
+        System.out.println("age: " + age);
+        System.out.println("sub 1: " + s1);
+        System.out.println("sub 2: " + s2);
+        System.out.println("sub 3: " + s3);
+        System.out.println("-------------------------------");
+        System.out.println("*total 50 mark per paper*");
+        System.out.println("total: " + sum);
+        System.out.println("percentage: " + per);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter name: ");
@@ -19,40 +74,18 @@ public class Main {
             System.out.println("***");
             System.out.println("LOGIN SUCCESSFUL");
             System.out.println("***");
-            System.out.println("enter sub 1: ");
-            double s1 = sc.nextDouble();
 
-            System.out.println("enter sub 2: ");
-            double s2 = sc.nextDouble();
+            double s1 = enterMark1(sc);
+            double s2 = enterMark2(sc);
+            double s3 = enterMark3(sc);
 
-            System.out.println("enter sub 3: ");
-            double s3 = sc.nextDouble();
+            double sum= sumMark(s1,s2,s3);
 
-            double sum = s1 + s2 + s3;
-            double per = (sum / 150) * 100;
-            System.out.println("-------------------------------");
-            System.out.println("Name: " + name);
-            System.out.println("age: " + age);
-            System.out.println(age > 18);// answer in true or false
-            System.out.println("sub 1: " + s1);
-            System.out.println("sub 2: " + s2);
-            System.out.println("sub 3: " + s3);
-            System.out.println("-------------------------------");
-            System.out.println("*total 50 mark per paper*");
-            System.out.println("total: " + sum);
-            System.out.println("percentage: " + per);
-            if (per >= 80) {
-                System.out.println("Grade: A");
-            }
-            else if (per >= 60) {
-                System.out.println("Grade: B");
-            }
-            else if (per >= 40) {
-                System.out.println("Grade: C");
-            }
-            else {
-                System.out.println("Grade: F");
-            }
+            double per=per(sum);
+
+            printt(name,age,s1,s2,s3,sum,per);
+
+            grade(per);
 
         }else{
             System.out.println("LOGIN FAIL!! SOMETHING WRONG");
