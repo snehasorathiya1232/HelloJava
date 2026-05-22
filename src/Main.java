@@ -1,27 +1,23 @@
 import java.util.Scanner;
 public class Main {
 
-    public static double enterMark1(Scanner sc){
-        System.out.println("enter sub 1: ");
-        return sc.nextDouble();
+    public static void enterMark(Scanner sc,double[] subject){
+        for(int i=0;i<subject.length;i++) {
+            System.out.println("enter sub"+(i+1)+" mark: ");
+            subject[i] = sc.nextDouble();
+        }
     }
 
-    public static double enterMark2(Scanner sc){
-        System.out.println("enter sub 2: ");
-        return sc.nextDouble();
+    public static double sumMark(double[] subject){
+        double sum=0;
+        for(int i=0;i<subject.length;i++) {
+            sum = subject[i]+sum;
+        }
+        System.out.println(sum);
+        return sum;
     }
 
-    public static double enterMark3(Scanner sc){
-        System.out.println("enter sub 3: ");
-        return sc.nextDouble();
-
-    }
-
-    public static double sumMark(double a,double b,double c){
-        return a + b + c;
-    }
-
-    public static double per(double sum){
+    public static double per(double sum,double[] subject){
         return (sum / 150) * 100;
     }
 
@@ -40,48 +36,50 @@ public class Main {
         }
     }
 
-    public static void printt(String name,int age,double s1,double s2,double s3,double sum,double per){
+    public static void printt(double[] subject,double sum,double per){
         System.out.println("-------------------------------");
-        System.out.println("Name: " + name);
-        System.out.println("age: " + age);
-        System.out.println("sub 1: " + s1);
-        System.out.println("sub 2: " + s2);
-        System.out.println("sub 3: " + s3);
+        for(int i=0;i<subject.length;i++) {
+            System.out.println("Subject "+(i+1)+" mark : "+subject[i]);
+        }
         System.out.println("-------------------------------");
         System.out.println("*total 50 mark per paper*");
         System.out.println("total: " + sum);
         System.out.println("percentage: " + per);
     }
-
+    // ////////////////////////////////////////////////////////////////////////////////////////////////
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter name: ");
-        String name = sc.nextLine();
 
+        String TName;
         String id = "abc123";
-        System.out.println("enter SPID: ");
-        String idd = sc.nextLine();
+        String idd;
+        String pass;
+        double[] subject=new double[4];
+        double sum;
+        double per;
+
+        System.out.println("enter teacher name: ");
+        TName = sc.nextLine();
+
+        System.out.println("enter Teacher ID: ");
+        idd = sc.nextLine();
 
         System.out.println("enter password: ");
-        String pass = sc.nextLine();
+        pass = sc.nextLine();
 
-        System.out.println("enter age: ");
-        int age = sc.nextInt();
 
         if(pass.equals("Sneha@2006") && idd.equals(id)) {
-            System.out.println("/n");
+            System.out.println("\n");
             System.out.println("LOGIN SUCCESSFUL");
-            System.out.println("/n");
+            System.out.println("\n");
 
-            double s1 = enterMark1(sc);
-            double s2 = enterMark2(sc);
-            double s3 = enterMark3(sc);
+            enterMark(sc,subject);
+            sum = sumMark(subject);
 
-            double sum= sumMark(s1,s2,s3);
 
-            double per=per(sum);
+            per=per(sum,subject);
 
-            printt(name,age,s1,s2,s3,sum,per);
+            printt(subject,sum,per);
 
             grade(per);
 
